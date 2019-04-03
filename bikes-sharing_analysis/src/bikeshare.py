@@ -24,36 +24,25 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # city
-    while True:
-        city = input("\nPlease input the city you want to analyza: ")
-        city = city.lower()
-        if city in CITY_DATA.keys():
-            break
-        else:
-            print("Please input the right city!")
 
-    # month
-    while True:
-        month = input("\nPlease input the month you want to analyza: ")
-        month = month.lower()
-        if month in MONTH:
-            break
-        else:
-            print("Please input the right month!")
-
-    # day
-    while True:
-        day = input("\nPlease input the day you want to analyza: ")
-        day = day.lower()
-        if day in DAY:
-            break
-        else:
-            print("Please input the right days!")
+    city = get_input('city', CITY_DATA.keys())
+    month = get_input('day', MONTH)
+    day = get_input('day', DAY)
 
     print('-'*40)
     return city, month, day
 
+def get_input(analysis_obj, objects_set):
+    "Get the input objects."
+    while True:
+        ret = input("\nPlease input the %s you want to analyza: " %analysis_obj)
+        ret = ret.lower()
+        if ret in objects_set:
+            break
+        else:
+            print("Please input the right %s!" %analysis_obj)
+    
+    return ret
 
 def load_data(city, month, day):
     """
@@ -123,6 +112,8 @@ def station_stats(df):
     print("The most commonly used end station: ", most_common_end_station)
 
     # display most frequent combination of start station and end station trip
+    # top = df.groupby(['Start Station', 'End Station']).size().idxmax()
+    # top[0],top[1]
     df_station = df['Start Station'] + df['End Station']
     most_frequent_station = df_station.mode()[0]
     print("The most commonly frequent combination of start station and end station trip: ",
@@ -161,18 +152,24 @@ def user_stats(df):
     print("Display counts of user types:\n", user_types)
 
     # Display counts of gender
-    genders = df['Gender'].value_counts()
-    print("Display counts of gender:\n", genders)
+    try:
+        genders = df['Gender'].value_counts()
+        print("Display counts of gender:\n", genders)
+    except:
+        print("\nWarning! There is no gender infomations in this city.")
 
     # Display earliest, most recent, and most common year of birth
-    most_common_year = df['Birth Year'].mode()[0]
+    try:
+        most_common_year = df['Birth Year'].mode()[0]
 
-    year_sorted = df['Birth Year'].sort_values()
-    year_sorted = year_sorted.dropna()
-    earliest_year = year_sorted.reset_index(drop=True).iloc[0]
-    most_recent_year = year_sorted.reset_index(drop=True).iloc[-1]
-    print("Display earliest, most recent, and most common year of birth:",
-          earliest_year, most_recent_year, most_common_year)
+        year_sorted = df['Birth Year'].sort_values()
+        year_sorted = year_sorted.dropna()
+        earliest_year = year_sorted.reset_index(drop=True).iloc[0]
+        most_recent_year = year_sorted.reset_index(drop=True).iloc[-1]
+        print("Display earliest, most recent, and most common year of birth:",
+            earliest_year, most_recent_year, most_common_year)
+    except:
+        print("\nWarning! There is no birth year infomations in this city.")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)

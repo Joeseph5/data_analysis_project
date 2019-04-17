@@ -41,3 +41,7 @@
 
 [调查未前往就诊的挂号预约数据集](report.html)
 
+代码实现见下方链接：
+
+[代码实现](src/Investigate_a_Dataset-zh.ipynb)
+

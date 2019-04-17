@@ -13145,7 +13145,8 @@ Alcoholism :酗酒情况<br>
 Handcap :不利因素<br>
 SMS_received :是否收到预约消息。<br>
 No-show :是否就诊，yes表示没有去，no按时就诊。</p>
-<h3 id="&#25552;&#20986;&#38382;&#39064;">&#25552;&#20986;&#38382;&#39064;<a class="anchor-link" href="#&#25552;&#20986;&#38382;&#39064;">&#182;</a></h3><ol>
+<h3 id="&#25552;&#20986;&#38382;&#39064;">&#25552;&#20986;&#38382;&#39064;<a class="anchor-link" href="#&#25552;&#20986;&#38382;&#39064;">&#182;</a></h3><p>结合数据，根据实际经验来分析。通常病人预约就诊但最终没有出现，原因大多是因为某些事情的阻隔，主要牵扯到病人自身的行为属性。当然医院是否有准备发送预约消息等也会有影响（SMS_received），但目前医院的基础设施十分健全，出现这种情况较少。因此我这里提出的问题主要是针对病人自身的情况来分析。</p>
+<ol>
 <li>未前往就诊是否与预约病人年纪有关？</li>
 <li>未前往就诊是否与预约病人性别有关？</li>
 <li>未前往就诊是否与预约时间有关系？</li>
@@ -13819,6 +13820,17 @@ memory usage: 11.8+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>未前往就诊是否与预约病人年纪有关？<br>
+这里以性别年龄为自变量，是否就诊为因变量。根据图表可以发现，青年阶段的病人已预约但未前往就诊的次数最多，老人最少。这个和各个年龄阶段的病人数量也相关，大于90岁的病人本身数量也少。未前往就诊与病人的年纪相关性不是很强。因此不能说明未前往就诊和病人年级有关。  </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#30740;&#31350;&#38382;&#39064;-2&#65306;-&#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#39044;&#32422;&#30149;&#20154;&#24615;&#21035;&#26377;&#20851;&#65311;">&#30740;&#31350;&#38382;&#39064; 2&#65306; &#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#39044;&#32422;&#30149;&#20154;&#24615;&#21035;&#26377;&#20851;&#65311;<a class="anchor-link" href="#&#30740;&#31350;&#38382;&#39064;-2&#65306;-&#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#39044;&#32422;&#30149;&#20154;&#24615;&#21035;&#26377;&#20851;&#65311;">&#182;</a></h3>
 </div>
 </div>
@@ -13871,6 +13883,17 @@ memory usage: 11.8+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>未前往就诊是否与预约病人性别有关？<br>
+这里以性别为自变量，是否就诊为因变量进行分析。根据图表，女性未前往就诊的比例为65.4%，男性为34.6%，显然未前往就诊是否与预约病人性别有关。  </li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="&#30740;&#31350;&#38382;&#39064;-3&#65306;-&#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#30149;&#20154;&#39044;&#32422;&#26102;&#38388;&#26377;&#20851;&#65311;">&#30740;&#31350;&#38382;&#39064; 3&#65306; &#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#30149;&#20154;&#39044;&#32422;&#26102;&#38388;&#26377;&#20851;&#65311;<a class="anchor-link" href="#&#30740;&#31350;&#38382;&#39064;-3&#65306;-&#26410;&#21069;&#24448;&#23601;&#35786;&#26159;&#21542;&#19982;&#30149;&#20154;&#39044;&#32422;&#26102;&#38388;&#26377;&#20851;&#65311;">&#182;</a></h3>
 </div>
 </div>
@@ -13910,8 +13933,6 @@ memory usage: 11.8+ MB
 <span class="n">data_time</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Counts&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Time period&#39;</span><span class="p">)</span>
-
-
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
@@ -13945,6 +13966,17 @@ memory usage: 11.8+ MB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>未前往就诊是否与预约时间有关系？<br>
+这里以预约就诊和约定就诊时间差为自变量，病人是否就诊为因变量。根据图表，未前往就诊的情况主要集中在提前预约10天以内，随着预约时间差的加长，未前往就诊情况减少。但细化10天内数据，发现相关性不明显。 因此可以说明，未前往就诊与预约时间有关系，在10天内的预约时间差，出现未前往就诊的情况最多。</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><a id='conclusions'></a></p>
 <h2 id="&#32467;&#35770;">&#32467;&#35770;<a class="anchor-link" href="#&#32467;&#35770;">&#182;</a></h2><blockquote><p><strong>提示</strong>：最后，你需要总结自己的调查结果。请确保你了解在探索过程中的局限性。如果尚未进行任何统计检验，不要做出任何统计结论。切记不要根据相关关系贸然推导出因果关系！</p>
 <p><strong>提示</strong>：如果你对自己的研究成果感到满意，应将其副本保存为 HTML 或 PDF 形式。在导出报告之前请检查一遍，确保报告结构完整，信息连贯。应删除所有类似的“提示”引用段，以保持报告中的简洁度。在提交之前，你还需要查看在课程结尾的项目提交页面中的项目审阅规范。</p>
@@ -13958,12 +13990,10 @@ memory usage: 11.8+ MB
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ol>
-<li>未前往就诊是否与预约病人年纪有关？
-根据图表可以发现，青年阶段的病人已预约但未前往就诊的次数最多，老人最少。这个和各个年龄阶段的病人数量也相关，大于90岁的病人本身数量也少。未前往就诊与病人的年纪相关性不是很强。  </li>
-<li>未前往就诊是否与预约病人性别有关？
-根据图表，女性未前往就诊的比例为65.4%，男性为34.6%，显然未前往就诊是否与预约病人性别有关。  </li>
-<li>未前往就诊是否与预约时间有关系？
-根据图表，未前往就诊的情况主要集中在提前预约10天以内，随着预约时间差的加长，未前往就诊情况减少。但细化10天内数据，发现相关性不明显。 </li>
+<li>根据数据探索可视化的部分，可以发现病人是否前往就诊与病人年纪、性别和预约就诊时间差的关系。  </li>
+<li>在分析过程中，采用控制变量法，每次分别取数据的两个子集进行分析，如病人是否出现就诊（No-show）和病人年纪（Age）。上述每个子集，能有效支持问题的分析。主要是因为选择的三个自变量，基本上是独立的，与与其它未分析变量之间的相关性不强（可以使用相关性分析说明）。因此得出的结论是可以支持问题分析的。    </li>
+<li>对于异常值的分析。在分析预约时间差的过程中，会出现时间差为负数的情况，及约定时间早于预约就诊时间，这显然是不对的。但在分析中，我采用时间分组的形式，从0开始分析，自动过滤了异常值，也不会对结论产生影响。  </li>
+<li>改进：在本项目分析中，主要是对频率进行统计分析。以频率除以基数分析，也是一种有效分析方式。  </li>
 </ol>
 
 </div>
